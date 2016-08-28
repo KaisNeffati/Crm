@@ -1,0 +1,26 @@
+
+<div class="mdl-card__supporting-text">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            {{ form_label(form.date) }}
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="display: flex;width:100%;">
+                {{ form_errors(form.date) }}
+                {{ form_widget(form.date.date, {'attr': {'class': 'mdl-textfield__input','autofocus':'autofocus','id':'date','style':'display:flex;'}}) }}
+                {{ form_widget(form.date.time, {'attr': {'class': 'mdl-textfield__input','id':'date','style':'display:flex;'}}) }}
+                <label class="mdl-textfield__label  " for="date"></label>
+            </div>
+        </div>
+{{ form_row(form.date)}}
+    </div>
+    <div class="mdl-grid">
+
+
+
+        <div class="mdl-textfield mdl-js-textfield" style="width: 100%">
+            {{ form_errors(form.description) }}
+            {{ form_widget(form.description, {'attr': {'class': 'mdl-textfield__input','id':'description','rows':'3','type':'text'}}) }}
+            <label class="mdl-textfield__label" for="description">{{ form_label(form.description) }}</label>
+        </div>
+    </div>
+
+</div>

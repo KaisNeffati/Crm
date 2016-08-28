@@ -1,0 +1,35 @@
+{# src/OC/UserBundle/Resources/views/layout.html.twig #}
+
+{# On étend notre layout #}
+{% extends "SITCoreBundle::layout.html.twig" %}
+
+{# Dans notre layout, il faut définir le block body #}
+{% block body %}
+
+    {# On affiche les messages flash que définissent les contrôleurs du bundle #}
+    {% for key, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="alert alert-{{ key }}">
+                {{ message|trans({}, 'FOSUserBundle') }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% image 'bundles/sit_platform/img/commercial.jpg'
+     output='/images/commercial.jpg'%}
+    <img src="{{ asset_url }}" alt="Example" style="width: 100%"/>
+    {% endimage %}
+    <div class="mdl-grid" style="position: absolute;top: 20%;width: 100%;">
+        <div class="mdl-cell mdl-cell--4-col" >
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+        </div>
+    </div>
+    {# On définit ce block, dans lequel vont venir s'insérer les autres vues du bundle #}
+
+
+{% endblock %}

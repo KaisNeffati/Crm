@@ -1,0 +1,144 @@
+table,.demo-card-square{
+    width: 100%;
+}
+
+select {
+    font-family: inherit;
+    background-color: transparent;
+    width: 100%;
+    padding: 4px 0;
+    font-size: 16px;
+    color: rgba(0,0,0, 0.26);
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0, 0.12);
+}
+
+/* Remove focus */
+select:focus {
+    outline: none;
+}
+
+/* Hide label */
+.mdl-selectfield label {
+    display: none;
+}
+
+/* Use custom arrow */
+.mdl-selectfield select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.mdl-selectfield {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    position: relative;
+}
+.mdl-selectfield:after {
+    position: absolute;
+    top: 0.75em;
+    right: 0.5em;
+    /* Styling the down arrow */
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: .25em solid transparent;
+    border-right: .25em solid transparent;
+    border-top: 0.375em solid rgba(0,0,0, 0.12);
+    pointer-events: none;
+}
+.description{
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: -webkit-left !important;
+}
+.description div{
+    font-size: 12px;
+    color: rgba(0,0,0,.54);font-weight: 700;
+}
+.right_modifierdelete{
+    position: absolute;
+    right: 5px;
+}
+.demo-card-wide{
+    width: 100%;
+}
+
+#ajouternoteafaire{
+    position: absolute;
+    right: 1%;
+    top: 2%;
+}
+#example_length{
+    width:20%;
+    float: left;
+}
+#example_filter{
+    float: right;
+}
+.paginate_active ,.paginate_button {
+    background-color: #e7e7e7; /* Green */
+    border: none;
+    color: gray;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#example_wrapper label,.dataTables_info{
+    color: gray;
+}
+.mdl-textfield__input{
+    display: flex;
+}
+.mdl-textfield{
+    width:100%;
+}
+.collum{
+    text-align: left !important;
+}
+#photosociete{
+    padding: 0;
+}
+.nodatafound{
+
+    width: 100%;
+    background: lightgray;
+    color: white;
+    text-align: center;
+    padding: 35px 0;
+
+}
+.flash{
+    color: red;
+    padding: 20px;
+    background: lightgray;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+#myList li{ display:none;
+}
+#loadMore {
+    color:green;
+    cursor:pointer;
+}
+#loadMore:hover {
+    color:black;
+}
+#showLess {
+    color:red;
+    cursor:pointer;
+    display:none;
+}
+#showLess:hover {
+    color:black;
+}
+.erreur{
+    color: red;
+}

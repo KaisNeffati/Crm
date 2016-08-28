@@ -1,0 +1,57 @@
+{% extends "SITUserBundle::layoutUsers.html.twig" %}
+
+{% block title %}
+    Annonces - {{ parent() }}
+{% endblock %}
+    {% block sitplatform_left %}
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Welcome</h2>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ path('sit_ajouter_utilisateur') }}">
+                    Ajouter Utilisateur
+                </a>
+            </div>
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                </button>
+            </div>
+        </div>
+    {% endblock %}
+    {% block sitplatform_center %}
+        {% for flash_message in app.session.flashBag.get('notice') %}
+            <div class="flash">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+        <table cellpadding="0" cellspacing="0" border="0" class="dataTable mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="example">
+            <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">Nom</th>
+                <th>Prenom</th>
+                <th>Cin</th>
+                <th>email</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in listUtilisateurs %}
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">{{ item.nom }}</td>
+                    <td>{{ item.prenom }}</td>
+                    <td>{{ item.cin }}</td>
+                    <td>{{ item.email }}</td>
+                    <td><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ path('sit_modifier_utilisateur', {'idutilisateur': item.id}) }}">Modifier</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ path('sit_supprimer_utilisateur', {'idutilisateur': item.id}) }}">Supprimer</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <script>
+            $(document).ready(function() {
+                $('#example').dataTable({"sPaginationType": "full_numbers"});
+            });
+        </script>
+    {% endblock %}

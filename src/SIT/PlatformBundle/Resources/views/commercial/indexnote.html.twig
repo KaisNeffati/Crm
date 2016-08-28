@@ -1,0 +1,89 @@
+{% extends "SITPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+    Annonces - {{ parent() }}
+{% endblock %}
+    {% block sitplatform_top %}
+        <ul class="bxslider">
+            {% for item in listNote %}
+                {% if (item.noteAFaire==1)  %}
+                    <li><div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Rappelle le {{ item.date|date('Y-m-d') }}</h2>
+
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                Vous avez : <br>
+                                {{ item.description }}
+                            </div>
+                            <div class="mdl-card__menu">
+                                <a class="mdl-list__item-secondary-action" href="{{ path('sit_supprimer_note',{'id':item.societe.id,'idnote':item.id}) }}">
+                                    <i class="material-icons">delete</i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endblock %}
+    {% block sitplatform_left %}
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Welcome</h2>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ path('sit_ajouter_societe') }}">
+                    Ajouter Societe
+                </a>
+            </div>
+            {% if is_granted('ROLE_BUSINESS_DEVELOPER') %}
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ path('sit_commerciaux') }}">
+                        Liste Commerciaux
+                    </a>
+                </div>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ path('sit_utilisateurs') }}">
+                        Gérer Utilisateur
+                    </a>
+                </div>
+            {% endif %}
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                </button>
+            </div>
+        </div>
+    {% endblock %}
+    {% block sitplatform_center %}
+        <table cellpadding="0" cellspacing="0" border="0" class="dataTable mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="example">
+            <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">Nom</th>
+                <th>Tel</th>
+                <th>Fax</th>
+                <th>Adresse</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in listSociete %}
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric"><h4><strong>{{ item.nom }}</strong></h4><br></td>
+                    <td>{{ item.tel }}</td>
+                    <td>{{ item.fax }}</td>
+                    <td>{{ item.adresse }}</td>
+                    <td><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ path('sit_societe', {'id': item.id}) }}">Gérer</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <script>
+            $(document).ready(function() {
+                $('#example').dataTable({"sPaginationType": "full_numbers"});
+            });
+        </script>
+    {% endblock %}

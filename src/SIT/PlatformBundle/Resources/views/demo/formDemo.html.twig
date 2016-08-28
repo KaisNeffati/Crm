@@ -1,0 +1,69 @@
+<div class="mdl-card__supporting-text">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.email) }}
+                {{ form_widget(form.email, {'attr': {'class': 'mdl-textfield__input','id':'email'}}) }}
+                <label class="mdl-textfield__label" for="email">{{ form_label(form.email) }}</label>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="sample1" value="{{ name }}" readonly>
+                <label for="sample1" class="mdl-textfield__label">societe</label>
+            </div>
+        </div>
+
+
+    </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_errors(form.login) }}
+                    {{ form_widget(form.login, {'attr': {'class': 'mdl-textfield__input','id':'login'}}) }}
+                    <label class="mdl-textfield__label" for="login">{{ form_label(form.login) }}</label>
+                </div>
+            </div>
+        <div class="mdl-cell mdl-cell--6-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.motsDPasse) }}
+                {{ form_widget(form.motsDPasse, {'attr': {'class': 'mdl-textfield__input','id':'motsDPasse'}}) }}
+                <label class="mdl-textfield__label" for="motsDPasse">{{ form_label(form.motsDPasse) }}</label>
+            </div>
+        </div>
+        </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">
+            {{ form_errors(form.dateDFin) }}
+            <label class="" for="dateDFin">{{ form_label(form.dateDFin) }}</label>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_widget(form.dateDFin, {'attr': {'class': 'mdl-textfield__input','id':'dateDFin'}}) }}
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            {{ form_errors(form.dateDemande) }}
+            <label class="" for="dateDemande">{{ form_label(form.dateDemande) }}</label>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_widget(form.dateDemande, {'attr': {'class': 'mdl-textfield__input','id':'dateDemande'}}) }}
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            {{ form_errors(form.dateDDebut) }}
+            <label class="" for="dateDDebut">{{ form_label(form.dateDDebut) }}</label>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_widget(form.dateDDebut, {'attr': {'class': 'mdl-textfield__input','id':'dateDDebut'}}) }}
+            </div>
+        </div>
+
+
+    </div>
+    <div class="mdl-grid">
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.description) }}
+                {{ form_widget(form.description, {'attr': {'class': 'mdl-textfield__input','id':'description'}}) }}
+                <label class="mdl-textfield__label" for="description">{{ form_label(form.description) }}</label>
+            </div>
+        </div>
+
+</div>

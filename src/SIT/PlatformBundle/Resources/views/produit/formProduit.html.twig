@@ -1,0 +1,46 @@
+
+<div class="mdl-card__supporting-text">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.periodeLivraison) }}
+                {{ form_widget(form.periodeLivraison, {'attr': {'class': 'mdl-textfield__input','id':'periodeLivraison'}}) }}
+                <label class="mdl-textfield__label" for="periodeLivraison">{{ form_label(form.periodeLivraison) }}</label>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.libelle) }}
+                {{ form_widget(form.libelle, {'attr': {'class': 'mdl-textfield__input','id':'libelle'}}) }}
+                <label class="mdl-textfield__label" for="libelle">{{ form_label(form.libelle) }}</label>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.dateLivraison) }}
+                {{ form_widget(form.dateLivraison.year, {'attr': {'class': 'mdl-textfield__input','id':'dateLivraison'}}) }}
+                {{ form_widget(form.dateLivraison.month, {'attr': {'style': 'display:none','id':''}}) }}
+                {{ form_widget(form.dateLivraison.day, {'attr': {'style': 'display:none','id':''}}) }}
+                <label class="mdl-textfield__label" for="dateLivraison">{{ form_label(form.dateLivraison) }}</label>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.type_d_installation) }}
+                {{ form_widget(form.type_d_installation, {'attr': {'class': 'mdl-textfield__input','id':'type_d_installation'}}) }}
+                <label class="mdl-textfield__label" for="type_d_installation">{{ form_label(form.type_d_installation) }}</label>
+            </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="sample1" value="{{ name }}" readonly>
+                <label for="sample1" class="mdl-textfield__label">societe</label>
+            </div>
+        </div>
+
+    </div>
+
+</div>

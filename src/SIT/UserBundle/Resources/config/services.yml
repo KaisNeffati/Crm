@@ -1,0 +1,4 @@
+services:
+#    sit_user.example:
+#        class: SIT\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

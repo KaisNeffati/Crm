@@ -1,0 +1,20 @@
+sit_utilisateurs:
+    path:     /Utilisateurs
+    defaults: { _controller: SITUserBundle:Utilisateur:utilisateurs }
+sit_ajouter_utilisateur:
+    path:     /ajouterUtilisateur/
+    defaults:
+        _controller: SITUserBundle:Utilisateur:ajouterUtilisateur
+sit_modifier_utilisateur:
+    path:     /{idutilisateur}/modifierUtilisateur
+    defaults:
+        _controller: SITUserBundle:Utilisateur:modifierUtilisateur
+    requirements:
+        idutilisateur: \d+
+
+sit_supprimer_utilisateur:
+    path:     /{idutilisateur}/supprimerUtilisateur
+    defaults:
+        _controller: SITUserBundle:Utilisateur:supprimerUtilisateur
+    requirements:
+        idutilisateur: \d+

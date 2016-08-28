@@ -1,0 +1,47 @@
+{% extends "SITPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+    Annonces - {{ parent() }}
+{% endblock %}
+    {% block sitplatform_center %}
+
+        <div class="demo-card-square mdl-card mdl-shadow--2dp">
+
+            <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">Demo : </h2>
+                <div class="right_modifierdelete">
+                    <a class="mdl-list__item-secondary-action" href="{{ path('sit_modifier_demo',{'id':id,'iddemo':demo.id }) }}">
+                        <i class="material-icons">edit</i>
+                    </a>
+                    <a class="mdl-list__item-secondary-action" href="{{ path('sit_supprimer_demo',{'id':id,'iddemo':demo.id }) }}">
+                        <i class="material-icons">delete</i>
+                    </a>
+                </div>
+            </div>
+            <div class="mdl-card__supporting-text">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--6-col"><strong>Email : </strong> {{ demo.email }}</div>
+                    <div class="mdl-cell mdl-cell--6-col"><strong>Societe : </strong> {{ demo.societe.nom }}</div>
+                </div>
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--6-col"><strong>Login : </strong> {{ demo.email }}</div>
+                    <div class="mdl-cell mdl-cell--6-col"><strong>Mots de passe : </strong> {{ demo.motsDPasse }}</div>
+                </div>
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--4-col"><strong>Date de fin : </strong> {{ demo.dateDFin|date('Y-M-D') }}</div>
+                    <div class="mdl-cell mdl-cell--4-col"><strong>Date de demande : </strong> {{ demo.dateDemande|date('Y-M-D') }}</div>
+                    <div class="mdl-cell mdl-cell--4-col"><strong>Date de debut : </strong> {{ demo.dateDDebut|date('Y-M-D') }}</div>
+                </div>
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col"><strong>Description : </strong> {{ demo.description }}</div>
+                </div>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ path('sit_societe',{'id':id}) }}">
+                    Retourner
+                </a>
+            </div>
+        </div>
+        <br>
+
+    {% endblock %}

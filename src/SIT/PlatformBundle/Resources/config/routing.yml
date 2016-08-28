@@ -1,0 +1,172 @@
+sit_platform_homepage:
+    path:     /
+    defaults: { _controller: SITPlatformBundle:Main:index }
+
+sit_societe:
+    path:     /{id}
+    defaults:
+        _controller: SITPlatformBundle:Societe:afficherSociete
+    requirements:
+        id: \d+
+sit_commerciaux:
+    path:     /commerciaux
+    defaults:
+        _controller: SITPlatformBundle:Commerciaux:afficherCommerciaux
+sit_personnel:
+    path:     /{id}/personnel/{idpersonnel}
+    defaults:
+        _controller: SITPlatformBundle:Personnel:afficherPersonnel
+    requirements:
+        id: \d+
+        idpersonnel: \d+
+sit_produit:
+    path:     /{id}/produit/{idproduit}
+    defaults:
+        _controller: SITPlatformBundle:Produit:afficherProduit
+    requirements:
+        id: \d+
+        idproduit: \d+
+sit_demo:
+    path:     /{id}/{iddemo}/demo/
+    defaults:
+        _controller: SITPlatformBundle:Demo:afficherDemo
+    requirements:
+        id: \d+
+sit_demo_ajouter:
+    path:     /{id}/ajouterdemo
+    defaults:
+        _controller: SITPlatformBundle:Demo:ajouterDemo
+    requirements:
+        id: \d+
+sit_commercial_rapport:
+    path:     /commerciaux/{idcommercial}
+    defaults:
+        _controller: SITPlatformBundle:Commerciaux:rapportCommercial
+    requirements:
+        idcommercial: \d+
+sit_ajouter_societe:
+    path:     /ajoutersociete/
+    defaults:
+        _controller: SITPlatformBundle:Societe:ajouterSociete
+sit_ajouter_personnel:
+    path:     /{id}/ajoutercontact/
+    defaults:
+        _controller: SITPlatformBundle:Personnel:addPersonnel
+    requirements:
+        id: \d+
+sit_ajouter_produit:
+    path:     /{id}/ajouterproduit/
+    defaults:
+        _controller: SITPlatformBundle:Produit:ajouterProduit
+    requirements:
+        id: \d+
+sit_ajouter_etat_produit:
+    path:     /{id}/{idproduit}/ajouteretatproduit
+    defaults:
+        _controller: SITPlatformBundle:EtatProduit:ajouterEtatProduit
+    requirements:
+        id: \d+
+        idproduit: \d+
+sit_ajouter_note:
+    path:     /{id}/ajouternote/
+    defaults:
+        _controller: SITPlatformBundle:Note:ajouterNote
+    requirements:
+        id: \d+
+sit_ajouter_noteAFaire:
+    path:     /{id}/ajouternoteAfaire/
+    defaults:
+        _controller: SITPlatformBundle:Note:ajouterNoteAFaire
+    requirements:
+        id: \d+
+sit_modifier_societe:
+    path:     /{id}/modifierSociete
+    defaults:
+        _controller: SITPlatformBundle:Societe:modifierSociete
+    requirements:
+        id: \d+
+sit_modifier_personnel:
+    path:     /{id}/modifiercontact/{idpersonnel}
+    defaults:
+        _controller: SITPlatformBundle:Personnel:editPersonnel
+    requirements:
+        id: \d+
+        idpersonnel: \d+
+sit_modifier_note:
+    path:     /{id}/modifierNote/{idnote}
+    defaults:
+        _controller: SITPlatformBundle:Note:modifierNote
+    requirements:
+        id: \d+
+        idnote: \d+
+sit_modifier_commercial:
+    path:     /{id}/modifiercommercialgerant/
+    defaults:
+        _controller: SITPlatformBundle:Societe:modifierCommercialGerant
+    requirements:
+        id: \d+
+sit_modifier_produit:
+    path:     /{id}/modifierproduit/{idproduit}
+    defaults:
+        _controller: SITPlatformBundle:Produit:modifierProduit
+    requirements:
+        id: \d+
+        idproduit: \d+
+sit_modifier_demo:
+    path:     /{id}/modifierdemo/{iddemo}
+    defaults:
+        _controller: SITPlatformBundle:Demo:modifierDemo
+    requirements:
+        id: \d+
+        idproduit: \d+
+sit_modifier_etat_produit:
+    path:     /{id}/{idproduit}/modifieretatproduit/{idetatproduit}
+    defaults:
+        _controller: SITPlatformBundle:EtatProduit:modifierEtatProduit
+    requirements:
+        id: \d+
+        idproduit: \d+
+        idetatproduit: \d+
+sit_supprimer_societe:
+    path:     /{id}/supprimerSociete/
+    defaults:
+        _controller: SITPlatformBundle:Societe:supprimersociete
+    requirements:
+        id: \d+
+sit_supprimer_personnel:
+    path:     /{id}/supprimercontact/{idpersonnel}
+    defaults:
+        _controller: SITPlatformBundle:Personnel:deletePersonnel
+    requirements:
+        id: \d+
+        idpersonnel: \d+
+sit_supprimer_produit:
+    path:     /{id}/supprimerproduit/{idproduit}
+    defaults:
+        _controller: SITPlatformBundle:Produit:supprimerProduit
+    requirements:
+        id: \d+
+        idproduit: \d+
+
+sit_supprimer_etat_produit:
+    path:     /{id}/{idproduit}/supprimerproduit/{idetatproduit}
+    defaults:
+        _controller: SITPlatformBundle:EtatProduit:supprimerEtatProduit
+    requirements:
+        id: \d+
+        idproduit: \d+
+        idetatproduit: \d+
+sit_supprimer_note:
+    path:     /{id}/supprimernote/{idnote}
+    defaults:
+        _controller: SITPlatformBundle:Note:supprimerNote
+    requirements:
+        id: \d+
+        idnote: \d+
+sit_supprimer_demo:
+    path:     /{id}/supprimerdemo/{iddemo}
+    defaults:
+        _controller: SITPlatformBundle:Demo:supprimerDemo
+    requirements:
+        id: \d+
+        iddemo: \d+

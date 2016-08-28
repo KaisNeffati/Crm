@@ -1,0 +1,59 @@
+
+    <div class="mdl-card__supporting-text">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_errors(form.nom) }}
+                    {{ form_widget(form.nom, {'attr': {'class': 'mdl-textfield__input','id':'nom'}}) }}
+                    <label class="mdl-textfield__label" for="nom">{{ form_label(form.nom) }}</label>
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_errors(form.prenom) }}
+                    {{ form_widget(form.prenom, {'attr': {'class': 'mdl-textfield__input','id':'prenom'}}) }}
+                    <label class="mdl-textfield__label" for="prenom">{{ form_label(form.prenom) }}</label>
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_errors(form.email) }}
+                    {{ form_widget(form.email, {'attr': {'class': 'mdl-textfield__input','id':'email','type':'email'}}) }}
+                    <label class="mdl-textfield__label" for="email">{{ form_label(form.email) }}</label>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_errors(form.tel) }}
+                    {{ form_widget(form.tel, {'attr': {'class': 'mdl-textfield__input','id':'tel','type':'number'}}) }}
+                    <label class="mdl-textfield__label" for="tel">{{ form_label(form.tel) }}</label>
+                </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="sample1" value="{{ name }}" readonly>
+                    <label for="sample1" class="mdl-textfield__label">societe</label>
+                </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_errors(form.fonction) }}
+                    {{ form_widget(form.fonction, {'attr': {'class': 'mdl-textfield__input','id':'fonction'}}) }}
+                    <label class="mdl-textfield__label" for="fonction">{{ form_label(form.fonction) }}</label>
+                </div>
+            </div>
+
+
+
+            <div class="mdl-textfield mdl-js-textfield" style="width: 100%">
+                {{ form_errors(form.description) }}
+                {{ form_widget(form.description, {'attr': {'class': 'mdl-textfield__input','id':'description','rows':'3','type':'text'}}) }}
+                <label class="mdl-textfield__label" for="description">{{ form_label(form.description) }}</label>
+            </div>
+        </div>
+
+    </div>

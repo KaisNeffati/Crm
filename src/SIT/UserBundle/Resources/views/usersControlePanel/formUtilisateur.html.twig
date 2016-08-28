@@ -1,0 +1,69 @@
+
+<div class="mdl-card__supporting-text">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.nom) }}
+                {{ form_widget(form.nom, {'attr': {'class': 'mdl-textfield__input','id':'nom'}}) }}
+                <label class="mdl-textfield__label" for="nom">{{ form_label(form.nom) }}</label>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.prenom) }}
+                {{ form_widget(form.prenom, {'attr': {'class': 'mdl-textfield__input','id':'prenom'}}) }}
+                <label class="mdl-textfield__label" for="prenom">{{ form_label(form.prenom) }}</label>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.email) }}
+                {{ form_widget(form.email, {'attr': {'class': 'mdl-textfield__input','id':'email'}}) }}
+                <label class="mdl-textfield__label" for="email">{{ form_label(form.email) }}</label>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.cin) }}
+                {{ form_widget(form.cin, {'attr': {'class': 'mdl-textfield__input','id':'cin'}}) }}
+                <label class="mdl-textfield__label" for="cin">{{ form_label(form.cin) }}</label>
+            </div>
+        </div>
+
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.username) }}
+                {{ form_widget(form.username, {'attr': {'class': 'mdl-textfield__input','id':'username'}}) }}
+                <label class="mdl-textfield__label" for="username">{{ form_label(form.username) }}</label>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+                {{ form_widget(form.plainPassword.first, {'attr': {'class': 'mdl-textfield__input','id':'first'}}) }}
+                <label class="mdl-textfield__label" for="first">{{ form_label(form.plainPassword.first) }}</label>
+            </div>
+            {{ form_errors(form.plainPassword.first) }}
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+                {{ form_widget(form.plainPassword.second, {'attr': {'class': 'mdl-textfield__input','id':'second'}}) }}
+                <label class="mdl-textfield__label" for="second">{{ form_label(form.plainPassword.second) }}</label>
+            </div>
+            {{ form_errors(form.plainPassword.second) }}
+        </div>
+    </div>
+    <div class="mdl-grid">
+
+        <label for="roles">{{ form_label(form.roles) }}</label>
+                {{ form_errors(form.roles) }}
+                {{ form_widget(form.roles, {'attr': {'class': 'mdl-textfield__input','id':'roles'}}) }}
+
+    </div>
+
+</div>

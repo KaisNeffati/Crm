@@ -1,0 +1,34 @@
+<div class="mdl-card__supporting-text">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.nom) }}
+                {{ form_widget(form.nom, {'attr': {'class': 'mdl-textfield__input','id':'nom'}}) }}
+                <label class="mdl-textfield__label" for="nom">{{ form_label(form.nom) }}</label>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.tel) }}
+                {{ form_widget(form.tel, {'attr': {'class': 'mdl-textfield__input','id':'tel'}}) }}
+                <label class="mdl-textfield__label" for="tel">{{ form_label(form.tel) }}</label>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.fax) }}
+                {{ form_widget(form.fax, {'attr': {'class': 'mdl-textfield__input','id':'fax'}}) }}
+                <label class="mdl-textfield__label" for="fax">{{ form_label(form.fax) }}</label>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_errors(form.adresse) }}
+                {{ form_widget(form.adresse, {'attr': {'class': 'mdl-textfield__input','id':'adresse'}}) }}
+                <label class="mdl-textfield__label" for="adresse">{{ form_label(form.adresse) }}</label>
+            </div>
+        </div>
+    </div>
+</div>

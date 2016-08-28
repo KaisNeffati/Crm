@@ -1,0 +1,42 @@
+{% extends "SITPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+    Annonces - {{ parent() }}
+{% endblock %}
+    {% block sitplatform_center %}
+
+        <div class="demo-card-square mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">Personnnel Num : {{ personnel.id }}</h2>
+                <div class="right_modifierdelete">
+                    <a class="mdl-list__item-secondary-action" href="{{ path('sit_modifier_personnel',{'id':id,'idpersonnel':personnel.id}) }}">
+                        <i class="material-icons">edit</i>
+                    </a>
+                    <a class="mdl-list__item-secondary-action" href="{{ path('sit_supprimer_personnel',{'id':id,'idpersonnel':personnel.id}) }}">
+                        <i class="material-icons">delete</i>
+                    </a>
+                </div>
+
+            </div>
+            <div class="mdl-card__supporting-text">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <strong>Nom : </strong> {{ personnel.nom }}
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col"><strong>Prenom : </strong> {{ personnel.prenom }}</div>
+                    <div class="mdl-cell mdl-cell--4-col"><strong>Fonction : </strong> {{ personnel.fonction }}</div>
+                </div>
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--4-col"><strong>Tel : </strong> {{ personnel.tel }}</div>
+                    <div class="mdl-cell mdl-cell--4-col"><strong>Email : </strong> {{ personnel.email }}</div>
+                    <div class="mdl-cell mdl-cell--4-col"><strong>Societe : </strong> {{ personnel.societe.nom }}</div>
+                </div>
+                <div ><strong>Description : </strong> {{ personnel.description }}</div>
+                </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ path('sit_societe',{'id':id}) }}">
+                    Retourner
+                </a>
+            </div>
+        </div>
+    {% endblock %}
